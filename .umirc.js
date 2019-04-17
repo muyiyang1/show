@@ -2,6 +2,7 @@
 // ref: https://umijs.org/config/
 export default {
   treeShaking: true,
+  theme:'./src/thems.js',
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
@@ -10,7 +11,7 @@ export default {
       dynamicImport: false,
       title: 'show',
       dll: false,
-      
+
       routes: {
         exclude: [
           /models\//,
