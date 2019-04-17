@@ -1,0 +1,41 @@
+.container {
+  .abled {
+    :global {
+      .ant-card-hoverable:hover {
+        .ant-card-meta-title {
+          color: #771f1a;
+        }
+      }
+    }
+  }
+
+  .disabled {
+    :global {
+      .ant-card-meta-title, .ant-card-meta-description, a, img {
+        opacity: 0.25;
+      }
+
+      .ant-card-hoverable, a {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  :global {
+    .ant-card {
+      height: 184px;
+      position: relative;
+    }
+
+    .ant-avatar {
+      width: 48px;
+      height: 48px;
+    }
+
+    .ant-card-actions {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
