@@ -16,7 +16,7 @@ class AppCenter extends React.Component {
       render:(text,record)=>(
         <span>
         {text}
-        {record.heattrend ===0 ? <Icon type="rise" style={{color:'red',float:'right',fontWeight:900}}/>:<Icon type="fall" style={{color:'green',float:'right',fontWeight:900}}/>}
+        {record.heattrend ===0 ? <Icon type="arrow-up" style={{color:'red',float:'right',fontWeight:900}}/>:<Icon type="arrow-down" style={{color:'green',float:'right',fontWeight:900}}/>}
         </span>
       )
     }];
@@ -24,7 +24,13 @@ class AppCenter extends React.Component {
       'rows|10': [
         {
           'id|+1': 1,
-          stocksName: '@cword(4)',
+          'stocksName|1':[
+            '银鸽投资','平安银行',
+            '中国宝安','深圳能源',
+            '中集集团','泛海控股',
+            '雷曼股份','中兴通讯',
+            '中国石化','中金岭南'
+          ],
           'heat|50-100':70,
           'heattrend|0-1':0,
         },

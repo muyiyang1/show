@@ -69,9 +69,9 @@ render() {
   const dropDownMenu = this.getMenu();
   const urlList = urlToList(pathname);
   const sk = (() => {
-    if (urlList[0] === 'appcenter') {
-      return `/${urlList[0]}/${urlList[1]}`;
-    }
+    // if (urlList[0] === 'appcenter') {
+    //   return `/${urlList[0]}/${urlList[1]}`;
+    // }
     return `/${urlList[0]}`;
   })();
   const menu = Object.keys(menuConfig)
