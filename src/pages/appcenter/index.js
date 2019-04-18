@@ -11,11 +11,15 @@ class AppCenter extends React.Component {
   negative=()=>{
      router.push('appcenter/negative')
   }
+  wordcloud=()=>{
+     router.push('appcenter/wordcloud')
+  }
   render() {
     return (
       <div className='normal'>
         <Button onClick={this.hot}>热门个股</Button>
         <Button onClick={this.negative}>负面舆情</Button>
+         <Button onClick={this.wordcloud}>综合词云</Button>
       </div>
     );
   }
