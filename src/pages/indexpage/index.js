@@ -45,7 +45,7 @@ const moduleList = [
 function IndexPage() {
   return (
     <div className={styles.container}>
-      <h2>概览</h2>
+      <h2>功能区</h2>
       <List
         grid={{ gutter: 24, xs: 3 }}
         dataSource={moduleList}
