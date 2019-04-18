@@ -130,7 +130,7 @@ class AppCenter extends React.Component {
         </Row>
 
         <Timeline style={{marginTop: '30px'}}>
-          <Timeline.Item color='#58bfc0'>
+          <Timeline.Item color='#096dd9'>
             <p style={{ fontSize: '16px' }}>
               <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
             </p>

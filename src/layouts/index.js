@@ -10,6 +10,7 @@ import router from 'umi/router';
 import { urlToList } from '@/utils/util';
 import menuConfig from '@/config/menu';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
+import logo from '../assets/logo.png';
 import styles from './index.less';
 
 const { Content, Header } = Layout;
@@ -102,7 +103,7 @@ render() {
           <div
             className={styles.header}
           >
-            {/* <div className={styles.logo}><img alt='logo' src={logo} /></div> */}
+            <div className={styles.logo}><img alt='logo' src={logo} /></div>
             {pathname !== '/indexpage' && (
             <Menu
               mode='horizontal'
