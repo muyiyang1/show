@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Row, Col, Table, Breadcrumb, Timeline, Tag } from "antd";
+import { Row, Col, Table, Breadcrumb, Timeline, Tag, Tabs } from "antd";
 import styles from './index.less';
+
+const TabPane = Tabs.TabPane;
 
 const bread = {
   height: '40px',
@@ -112,52 +114,60 @@ class AppCenter extends React.Component {
           <Breadcrumb.Item>负面舆情</Breadcrumb.Item>
         </Breadcrumb>
         <Row gutter={24}>
-          <Col span={24}>
-            <div className={styles.platform}>
-              <div className={styles.headerTitle}>
-                <span className={styles.title}>负面舆情</span>
-              </div>
-              <div className={styles.contenttable}>
-                <Table
-                  size='middle'
-                  columns={columns}
-                  dataSource={dataSource}
-                  pagination={false}
-                />
-              </div>
-            </div>
-          </Col>
+          <Tabs defaultActiveKey="1">
+            <TabPane tab="列表" key="1">
+              <Col span={24}>
+                <div className={styles.platform}>
+                  <div className={styles.headerTitle}>
+                    <span className={styles.title}>负面舆情</span>
+                  </div>
+                  <div className={styles.contenttable}>
+                    <Table
+                      size='middle'
+                      columns={columns}
+                      dataSource={dataSource}
+                      pagination={false}
+                    />
+                  </div>
+                </div>
+              </Col>
+            </TabPane>
+            <TabPane tab="时间轴" key="2">
+              <Timeline>
+                <Timeline.Item color='#58bfc0'>
+                  <p style={{ fontSize: '16px' }}>
+                    <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
+                  </p>
+                  <p>**轮船</p>
+                  <p>在北太平洋</p>
+                  <p>沉船漏油</p>
+                  <p>污染地球</p>
+                </Timeline.Item>
+                <Timeline.Item>
+                  <p style={{ fontSize: '16px' }}>
+                    <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
+                  </p>
+                  <p>**轮船</p>
+                  <p>在南极洲附近海域</p>
+                  <p>沉船漏油</p>
+                  <p>影响企鹅栖息地环境</p>
+                </Timeline.Item>
+                <Timeline.Item>
+                  <p style={{ fontSize: '16px' }}>
+                    <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
+                  </p>
+                  <p>**轮船</p>
+                  <p>在日本近海海域</p>
+                  <p>沉船漏油</p>
+                  <p>造成恶劣影响</p>
+                </Timeline.Item>
+              </Timeline>
+            </TabPane>
+          </Tabs>
+
         </Row>
 
-        <Timeline style={{marginTop: '30px'}}>
-          <Timeline.Item color='#58bfc0'>
-            <p style={{ fontSize: '16px' }}>
-              <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
-            </p>
-            <p>**轮船</p>
-            <p>在北太平洋</p>
-            <p>沉船漏油</p>
-            <p>污染地球</p>
-          </Timeline.Item>
-          <Timeline.Item>
-            <p style={{ fontSize: '16px' }}>
-              <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
-            </p>
-            <p>**轮船</p>
-            <p>在南极洲附近海域</p>
-            <p>沉船漏油</p>
-            <p>影响企鹅栖息地环境</p>
-          </Timeline.Item>
-          <Timeline.Item>
-            <p style={{ fontSize: '16px' }}>
-              <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
-            </p>
-            <p>**轮船</p>
-            <p>在日本近海海域</p>
-            <p>沉船漏油</p>
-            <p>造成恶劣影响</p>
-          </Timeline.Item>
-        </Timeline>
+
       </div>
     );
   }
