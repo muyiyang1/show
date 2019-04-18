@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col, Breadcrumb, } from "antd";
-import styles from './index.less';
 
 const bread = {
   height: '40px',
