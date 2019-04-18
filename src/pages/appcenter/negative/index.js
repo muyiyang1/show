@@ -109,7 +109,7 @@ class AppCenter extends React.Component {
       <div className='normal'>
         <Breadcrumb separator=">" style={bread}>
           <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
-          <Breadcrumb.Item>热门个股</Breadcrumb.Item>
+          <Breadcrumb.Item>负面舆情</Breadcrumb.Item>
         </Breadcrumb>
         <Row gutter={24}>
           <Col span={24}>
