@@ -7,10 +7,7 @@ export default {
   },
   appcenter: {
     url: '/appcenter',
-    name: '应用中心',
+    name: '场景中心',
     icon: '',
-
   },
-
-
 };

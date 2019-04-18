@@ -1,8 +1,15 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Row,Col,Table,Icon } from "antd";
+import { Row,Col,Table,Icon,Breadcrumb } from "antd";
 import mockjs from 'mockjs';
 import styles from './index.less';
+
+const bread={
+  height:'40px',
+  lineHeight:'40px',
+  fontSize:'16px',
+  marginBottom:'12px'
+}
 
 @connect()
 class AppCenter extends React.Component {
@@ -58,7 +65,10 @@ class AppCenter extends React.Component {
     })
     return (
       <div className='normal'>
-        <h2>热门个股</h2>
+        <Breadcrumb separator=">" style={bread}>
+          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
+          <Breadcrumb.Item>热门个股</Breadcrumb.Item>
+        </Breadcrumb>
         <Row gutter={24}>
           <Col span={12}>
             <div className={styles.platform}>

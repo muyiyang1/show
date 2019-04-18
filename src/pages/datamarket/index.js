@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Card, List, Avatar,Breadcrumb } from 'antd';
+import { Card, List, Avatar,Breadcrumb ,Icon} from 'antd';
 import Meta from 'antd/lib/card/Meta';
 
 const moduleList = [
@@ -55,8 +55,8 @@ class DataMarket extends React.Component {
               >
                 <Meta
                   avatar={<Avatar src={item.icon} />}
-                  title={item.title}
-                  description={item.desc}
+                  title={<div>{item.title}<Icon type="question-circle" style={{float:'right'}}/></div>}
+                  description={<div>{item.desc}<div><Icon type="api" /></div></div>}
                 />
               </Card>
             </List.Item>
