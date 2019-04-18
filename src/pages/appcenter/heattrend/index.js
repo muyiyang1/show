@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Col, Breadcrumb, } from "antd";
+import { Tag, Breadcrumb, Col,Row,Card} from "antd";
+import HeatTrendChart from './heattrendchart';
 
 const bread = {
   height: '40px',
@@ -7,7 +8,7 @@ const bread = {
   fontSize: '16px',
   marginBottom: '12px'
 }
-
+const { CheckableTag } = Tag;
 class HeatTrend extends React.Component {
   render() {
     return (
@@ -17,7 +18,34 @@ class HeatTrend extends React.Component {
           <Breadcrumb.Item>热度趋势</Breadcrumb.Item>
         </Breadcrumb>
         <div className='tablebg'>
+          <div style={{marginTop:12,marginBottom:12}}>
+            <CheckableTag checked>全部</CheckableTag>
+            <CheckableTag checked>综合</CheckableTag>
+            <CheckableTag checked>个股</CheckableTag>
+            <CheckableTag checked>行业</CheckableTag>
+            <CheckableTag checked>概念</CheckableTag>
+          </div>
 
+          <Row gutter={24}>
+            <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+            <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+            <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+             <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+             <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+             <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+          </Row>
         </div>
       </div>
     );

@@ -26,7 +26,7 @@ class AppCenter extends React.Component {
             <div className={styles.platform}>
               <div className={styles.headerTitle}>
                 <span className={styles.title}>个股词云</span>
-                <span className={styles.titletime}>更新时间：2018-09-21 21:00:09</span>
+                <span className={styles.titletime}>更新时间：2019-04-21 21:00:09</span>
               </div>
               <div className={styles.contenttable}>
                 <WordcloudChart/>
@@ -37,7 +37,7 @@ class AppCenter extends React.Component {
             <div className={styles.platform}>
               <div className={styles.headerTitle}>
                 <span className={styles.title}>行业词云</span>
-                <span className={styles.titletime}>更新时间：2018-09-21 21:00:09</span>
+                <span className={styles.titletime}>更新时间：2019-04-21 21:00:09</span>
               </div>
               <div className={styles.contenttable}>
                 <WordcloudChart/>
@@ -48,7 +48,7 @@ class AppCenter extends React.Component {
             <div className={styles.platform}>
               <div className={styles.headerTitle}>
                 <span className={styles.title}>概念词云</span>
-                <span className={styles.titletime}>更新时间：2018-09-21 21:00:09</span>
+                <span className={styles.titletime}>更新时间：2019-04-21 21:00:09</span>
               </div>
               <div className={styles.contenttable}>
                 <WordcloudChart/>

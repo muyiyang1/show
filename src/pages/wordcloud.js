@@ -103,7 +103,7 @@ class Wordcloud extends React.Component {
     return (
       <div>
         <Chart
-          height={320}
+          height={380}
           data={dv}
           scale={scale}
           padding={0}
