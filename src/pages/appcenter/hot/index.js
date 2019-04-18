@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Row,Col,Table,Icon,Breadcrumb } from "antd";
-import mockjs from 'mockjs';
 import styles from './index.less';
 
 const bread={
@@ -27,42 +26,50 @@ class AppCenter extends React.Component {
         </span>
       )
     }];
-    const hotlistdata = mockjs.mock({
-      'rows|10': [
-        {
-          'id|+1': 1,
-          'stocksName|1':[
-            '银鸽投资','平安银行',
-            '中国宝安','深圳能源',
-            '中集集团','泛海控股',
-            '雷曼股份','中兴通讯',
-            '中国石化','中金岭南'
-          ],
-          'heat|50-100':70,
-          'heattrend|0-1':0,
-        },
-      ],
-    })
-     const attentiondata = mockjs.mock({
-      'rows|10': [
-        {
-          'id|+1': 1,
-          stocksName: '@cword(4)',
-          'heat|50-100':70,
-          'heattrend|0-1':0,
-        },
-      ],
-    })
-     const discussdata = mockjs.mock({
-      'rows|10': [
-        {
-          'id|+1': 1,
-          stocksName: '@cword(4)',
-          'heat|50-100':70,
-          'heattrend|0-1':0,
-        },
-      ],
-    })
+    const hotlistdata = {
+       "rows":[
+          {"id":1,"stocksName":"平安银行","heat":100,"heattrend":0},
+          {"id":2,"stocksName":"中兴通讯","heat":99,"heattrend":0},
+          {"id":3,"stocksName":"中国宝安","heat":98,"heattrend":1},
+          {"id":4,"stocksName":"深圳能源","heat":98,"heattrend":1},
+          {"id":5,"stocksName":"中集集团","heat":97,"heattrend":0},
+          {"id":6,"stocksName":"中国石化","heat":96,"heattrend":0},
+          {"id":7,"stocksName":"雷曼股份","heat":95,"heattrend":1},
+          {"id":8,"stocksName":"银鸽投资","heat":94,"heattrend":0},
+          {"id":9,"stocksName":"银鸽投资","heat":93,"heattrend":1},
+          {"id":10,"stocksName":"中金岭南","heat":91,"heattrend":0}
+       ]
+      }
+
+     const discussdata = {
+       "rows":[
+          {"id":1,"stocksName":"银鸽投资","heat":100,"heattrend":0},
+          {"id":2,"stocksName":"平安银行","heat":99,"heattrend":0},
+          {"id":3,"stocksName":"中国宝安","heat":98,"heattrend":1},
+          {"id":4,"stocksName":"深圳能源","heat":98,"heattrend":1},
+          {"id":5,"stocksName":"中集集团","heat":97,"heattrend":0},
+          {"id":6,"stocksName":"泛海控股","heat":96,"heattrend":0},
+          {"id":7,"stocksName":"雷曼股份","heat":95,"heattrend":1},
+          {"id":8,"stocksName":"中兴通讯","heat":94,"heattrend":0},
+          {"id":9,"stocksName":"中国石化","heat":93,"heattrend":1},
+          {"id":10,"stocksName":"中金岭南","heat":91,"heattrend":0}
+       ]
+      }
+       const attentiondata = {
+       "rows":[
+          {"id":1,"stocksName":"银鸽投资","heat":100,"heattrend":0},
+          {"id":2,"stocksName":"平安银行","heat":99,"heattrend":0},
+          {"id":3,"stocksName":"中国宝安","heat":98,"heattrend":1},
+          {"id":4,"stocksName":"深圳能源","heat":98,"heattrend":1},
+          {"id":5,"stocksName":"中集集团","heat":97,"heattrend":0},
+          {"id":6,"stocksName":"泛海控股","heat":96,"heattrend":0},
+          {"id":7,"stocksName":"雷曼股份","heat":95,"heattrend":1},
+          {"id":8,"stocksName":"中兴通讯","heat":94,"heattrend":0},
+          {"id":9,"stocksName":"中国石化","heat":93,"heattrend":1},
+          {"id":10,"stocksName":"中金岭南","heat":91,"heattrend":0}
+       ]
+      }
+
     return (
       <div className='normal'>
         <Breadcrumb separator=">" style={bread}>
