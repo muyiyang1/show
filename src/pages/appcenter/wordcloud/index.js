@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Row,Col,Breadcrumb } from "antd";
+import WordcloudChart from "../../wordcloud";
 import styles from './index.less';
 
 const bread={
@@ -28,7 +29,7 @@ class AppCenter extends React.Component {
                 <span className={styles.titletime}>更新时间：2018-09-21 21:00:09</span>
               </div>
               <div className={styles.contenttable}>
-
+                <WordcloudChart/>
               </div>
             </div>
           </Col>
@@ -39,7 +40,7 @@ class AppCenter extends React.Component {
                 <span className={styles.titletime}>更新时间：2018-09-21 21:00:09</span>
               </div>
               <div className={styles.contenttable}>
-
+                <WordcloudChart/>
               </div>
             </div>
           </Col>
@@ -50,7 +51,7 @@ class AppCenter extends React.Component {
                 <span className={styles.titletime}>更新时间：2018-09-21 21:00:09</span>
               </div>
               <div className={styles.contenttable}>
-
+                <WordcloudChart/>
               </div>
             </div>
           </Col>
