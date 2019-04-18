@@ -69,14 +69,13 @@ render() {
   const dropDownMenu = this.getMenu();
   const urlList = urlToList(pathname);
   const sk = (() => {
-    // if (urlList[0] === 'factor' || urlList[0] === 'strategy') {
-    //   return `/${urlList[0]}/${urlList[1]}`;
-    // }
+    if (urlList[0] === 'appcenter') {
+      return `/${urlList[0]}/${urlList[1]}`;
+    }
     return `/${urlList[0]}`;
   })();
   const menu = Object.keys(menuConfig)
     .map(key => {
-      // if (!menuConfig[key].authority) {
       return (
         menuConfig[key].children ? (
           <SubMenu title={<span>{menuConfig[key].name}</span>} key={menuConfig[key].url} id={key}>
@@ -90,8 +89,6 @@ render() {
           </Menu.Item>
         )
       );
-      // }
-      // return null;
     });
   if (pathname === '/user/login') {
     return <React.Fragment>{ children }</React.Fragment>;
