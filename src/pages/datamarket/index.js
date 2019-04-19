@@ -56,7 +56,7 @@ class DataMarket extends React.Component {
                 <Meta
                   avatar={<Avatar src={item.icon} />}
                   title={<div>{item.title}<Icon type="exclamation-circle"  style={{float:'right'}}/></div>}
-                  description={<div>{item.desc}<div><Icon type="api" /></div></div>}
+                  description={<div>{item.desc}</div>}
                 />
               </Card>
             </List.Item>
