@@ -50,7 +50,7 @@ class AppCenter extends React.Component {
     return (
       <div className='normal'>
         <Card
-          title={<span>热门个股<span onClick={this.hot} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>更多</span></span>}
+          title={<span>热门个股<span onClick={this.hot} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
           bordered={false}
           style={{marginBottom:24}}
         >
@@ -88,7 +88,7 @@ class AppCenter extends React.Component {
           </Row>
         </Card>
         <Card
-         title={<span>综合词云<span onClick={this.wordcloud} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>更多</span></span>}
+         title={<span>综合词云<span onClick={this.wordcloud} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
           bordered={false}
           style={{marginBottom:24}}
         >
@@ -100,28 +100,60 @@ class AppCenter extends React.Component {
 
         </Card>
          <Card
-         title={<span>负面舆情<span onClick={this.negative} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>更多</span></span>}
+         title={<span>负面舆情<span onClick={this.negative} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
+          bordered={false}
+          style={{marginBottom:24}}
+        >
+        <Row gutter={48}>
+            <Col span={6}>
+                <div className={styles.card}>
+                  <span>负面舆情<Icon type="exclamation-circle"  style={{float:'right',lineHeight:'40px'}}/></span>
+                  <div className={styles.list}>
+                      <span style={{fontWeight:100}}>更新咨询条数</span>
+                      <span style={{fontWeight:800,fontSize:'28px',float:'right'}}>78</span>
+                  </div>
+                   <div className={styles.list}>
+                      <span style={{fontWeight:100}}>波及股票</span>
+                      <span style={{fontWeight:800,fontSize:'28px',float:'right'}}>258</span>
+                  </div>
+                </div>
+            </Col>
+
+          </Row>
+        </Card>
+         <Card
+         title={<span>新兴概念<span onClick={this.new} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
           bordered={false}
           style={{marginBottom:24}}
         >
         </Card>
          <Card
-         title={<span>新兴概念<span onClick={this.new} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>更多</span></span>}
+         title={<span>热度趋势<span onClick={this.heattrend} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
           bordered={false}
           style={{marginBottom:24}}
         >
         </Card>
          <Card
-         title={<span>热度趋势<span onClick={this.heattrend} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>更多</span></span>}
+         title={<span>知识图谱<span onClick={this.knowledgemap} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
           bordered={false}
           style={{marginBottom:24}}
         >
-        </Card>
-         <Card
-         title={<span>知识图谱<span onClick={this.knowledgemap} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>更多</span></span>}
-          bordered={false}
-          style={{marginBottom:24}}
-        >
+          <Row gutter={48}>
+            <Col span={6}>
+                <div className={styles.card}>
+                  <span>知识图谱<Icon type="exclamation-circle"  style={{float:'right',lineHeight:'40px'}}/></span>
+                  <div className={styles.list}>
+                      <span style={{fontWeight:100}}>公司</span>
+                      <span style={{fontWeight:800,fontSize:'28px',float:'right'}}>18</span>
+                  </div>
+                   <div className={styles.list}>
+                      <span style={{fontWeight:100}}>事件</span>
+                      <span style={{fontWeight:800,fontSize:'28px',float:'right'}}>25</span>
+                  </div>
+                </div>
+            </Col>
+
+          </Row>
         </Card>
 
       </div>

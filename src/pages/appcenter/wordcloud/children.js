@@ -17,7 +17,7 @@ import {
 } from "bizcharts";
 import DataSet from "@antv/data-set";
 import _ from 'lodash';
-import dataurl from '../assets/agu.csv';
+import dataurl from '../../../assets/agu.csv';
 
 console.log(dataurl);
 
@@ -68,7 +68,7 @@ class Wordcloud extends React.Component {
     dv.transform({
       type: "tag-cloud",
       fields: ["x", "value"],
-      size: [200, height],
+      size: [window.innerWidth, height],
       font: "Verdana",
       padding: 0,
       timeInterval: 5000,

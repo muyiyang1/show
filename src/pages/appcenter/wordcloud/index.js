@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Row,Col,Breadcrumb } from "antd";
-import WordcloudChart from "../../wordcloud";
+import WordcloudChart from "./children";
 import styles from './index.less';
 
 const bread={

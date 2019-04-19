@@ -107,7 +107,7 @@ const cols = {
 class AppCenter extends React.Component {
   chart=()=>{
     return(
-      <div style={{width:200,height:100}}>
+      <div style={{width:200,height:100,}}>
         <Chart height={100} width={200} data={data} scale={cols} forceFit padding={[0]}>
           <Tooltip
             crosshairs={{
@@ -125,7 +125,7 @@ class AppCenter extends React.Component {
       title: '个股',
       dataIndex: 'stocksName',
       render:(text)=>(
-        <a href='javascript:;'> <Tooltip placement="right" title={this.chart}>{text}</Tooltip></a>
+        <a href='javascript:;'> <Tooltip placement="right"  title={this.chart}>{text}</Tooltip></a>
       )
     }, {
       title: '热度',
