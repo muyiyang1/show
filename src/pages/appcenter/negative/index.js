@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import { Row, Col, Table, Breadcrumb, Timeline, Tag, Tabs } from "antd";
 import styles from './index.less';
+import Link from "umi/link";
 
 const TabPane = Tabs.TabPane;
 
@@ -120,29 +121,12 @@ class AppCenter extends React.Component {
     return (
       <div className='normal'>
         <Breadcrumb separator=">" style={bread}>
-          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
+          <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
           <Breadcrumb.Item>负面舆情</Breadcrumb.Item>
         </Breadcrumb>
         <div className='tablebg'>
           <Tabs defaultActiveKey="1">
-            <TabPane tab="列表" key="1">
-              <Col span={24}>
-                <div className={styles.platform}>
-                  <div className={styles.headerTitle}>
-                    <span className={styles.title}>负面舆情</span>
-                  </div>
-                  <div className={styles.contenttable}>
-                    <Table
-                      size='middle'
-                      columns={columns}
-                      dataSource={dataSource}
-                      pagination={false}
-                    />
-                  </div>
-                </div>
-              </Col>
-            </TabPane>
-            <TabPane tab="时间轴" key="2">
+            <TabPane tab="时间线" key="1">
               <Timeline>
                 <Timeline.Item color='#58bfc0'>
                   <p style={{ fontSize: '16px' }}>
@@ -175,6 +159,23 @@ class AppCenter extends React.Component {
                   <a>全文</a>
                 </Timeline.Item>
               </Timeline>
+            </TabPane>
+            <TabPane tab="列表" key="2">
+              <Col span={24}>
+                <div className={styles.platform}>
+                  <div className={styles.headerTitle}>
+                    <span className={styles.title}>负面舆情</span>
+                  </div>
+                  <div className={styles.contenttable}>
+                    <Table
+                      size='middle'
+                      columns={columns}
+                      dataSource={dataSource}
+                      pagination={false}
+                    />
+                  </div>
+                </div>
+              </Col>
             </TabPane>
           </Tabs>
 

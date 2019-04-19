@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tag, Breadcrumb, Col,Row,Card} from "antd";
+import Link from "umi/link";
 import HeatTrendChart from './heattrendchart';
 
 const bread = {
@@ -14,7 +15,7 @@ class HeatTrend extends React.Component {
     return (
       <div className='normal'>
         <Breadcrumb separator=">" style={bread}>
-          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
+          <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
           <Breadcrumb.Item>热度趋势</Breadcrumb.Item>
         </Breadcrumb>
         <div className='tablebg'>

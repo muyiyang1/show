@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import { Row,Col,Breadcrumb } from "antd";
 import WordcloudChart from "./children";
+import Link from "umi/link";
 import styles from './index.less';
 
 const bread={
@@ -18,7 +19,7 @@ class AppCenter extends React.Component {
     return (
       <div className='normal'>
         <Breadcrumb separator=">" style={bread}>
-          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
+          <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
           <Breadcrumb.Item>综合词云</Breadcrumb.Item>
         </Breadcrumb>
         <Row gutter={24}>

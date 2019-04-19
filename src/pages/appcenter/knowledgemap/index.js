@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import echarts from 'echarts';
 // import { forceSimulation, forceManyBody, forceLink, forceCenter } from 'd3';
+import Link from "umi/link";
 import $ from 'jquery';
 import data from '@/assets/network.json';
 import uuid from 'uuid';
@@ -133,8 +134,8 @@ class Network extends Component {
     return(
       <div>
         <Breadcrumb separator=">" style={bread}>
-          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
-          <Breadcrumb.Item>热门个股</Breadcrumb.Item>
+          <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
+          <Breadcrumb.Item>知识图谱</Breadcrumb.Item>
         </Breadcrumb>
         <div id="netWorkMountNode"  style={{ width: 1000, height: 600 }} />
       </div>

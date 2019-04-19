@@ -3,6 +3,7 @@ import G6 from '@antv/g6';
 import { forceSimulation, forceManyBody, forceLink, forceCenter } from 'd3';
 import $ from 'jquery';
 import data from '@/assets/xiaomi.json';
+import Link from "umi/link";
 // import './index.css';
 
 // console.log(data);
