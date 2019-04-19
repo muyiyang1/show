@@ -28,22 +28,22 @@ class HeatTrend extends React.Component {
 
           <Row gutter={24}>
             <Col span={12} style={{marginBottom:24}}>
-              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+              <Card title="个股综合热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
             <Col span={12} style={{marginBottom:24}}>
-              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+              <Card title="行业综合热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
             <Col span={12} style={{marginBottom:24}}>
-              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+              <Card title="概念综合热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
              <Col span={12} style={{marginBottom:24}}>
-              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+              <Card title="个股舆论热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
              <Col span={12} style={{marginBottom:24}}>
-              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+              <Card title="行业舆论热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
              <Col span={12} style={{marginBottom:24}}>
-              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+              <Card title="概念舆论热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
           </Row>
         </div>

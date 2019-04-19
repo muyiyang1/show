@@ -20,8 +20,8 @@ $.ajax({
 function getComponent(data) {
   const ds = new DataSet({
     state: {
-      start: new Date("2009/2/20 0:00").getTime(),
-      end: new Date("2009/10/21 0:00").getTime()
+      start: new Date("2009/9/20").getTime(),
+      end: new Date("2009/9/23").getTime()
     }
   });
   const dv = ds.createView("origin").source(data);
@@ -36,10 +36,10 @@ function getComponent(data) {
     time: {
       type: "time",
       tickCount: 8,
-      mask: "m/dd hh:MM"
+      mask: "M/DD"
     },
     flow: {
-      alias: "流量(m^3/s)"
+      alias: "热度"
     },
 
   };
@@ -58,7 +58,7 @@ function getComponent(data) {
           <Chart
             height={400}
             data={dv}
-            padding={[40, 40, 40, 80]}
+            padding={[40, 80, 40, 80]}
             scale={scale}
             onGetG2Instance={g2Chart => {
               g2Chart.animate(false);
@@ -72,7 +72,7 @@ function getComponent(data) {
             <Geom
               type="area"
               position="time*flow"
-              color="l(100) 0:#a50f15 1:#f7f7f7"
+              color="l(100) 0:#096dd9 1:#f5f5f5"
               opacity={0.85}
             />
 
@@ -80,6 +80,7 @@ function getComponent(data) {
           <div>
             <Slider
               width="auto"
+              padding={[0, 20, 0, 0]}
               height={26}
               start={ds.state.start}
               end={ds.state.end}
@@ -89,7 +90,7 @@ function getComponent(data) {
                 time: {
                   type: "time",
                   tickCount: 10,
-                  mask: "M/DD H:mm"
+                  mask: "M/DD"
                 }
               }}
               data={dv}
