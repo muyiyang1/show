@@ -2,6 +2,8 @@
 // ref: https://umijs.org/config/
 export default {
   treeShaking: true,
+  hash:true,
+  history: 'hash',
   theme:'./src/thems.js',
   outputPath: './docs',
   base: '/show',
