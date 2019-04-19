@@ -193,6 +193,15 @@ class AppCenter extends React.Component {
           <Col span={6}>
             <WordcloudChart height={240}/>
           </Col>
+          <Col span={6}>
+            <WordcloudChart height={240}/>
+          </Col>
+          <Col span={6}>
+            <WordcloudChart height={240}/>
+          </Col>
+          <Col span={6}>
+            <WordcloudChart height={240}/>
+          </Col>
         </Row>
 
         </Card>
