@@ -19,16 +19,15 @@ import DataSet from "@antv/data-set";
 import _ from 'lodash';
 import dataurl from '../../../assets/agu.csv';
 
-console.log(dataurl);
 
-let data;
+let data1;
 $.ajax({
   url: '' + dataurl,
   async : false,
-  success: (iData) => { data = iData }
+  success: (iData) => { data1 = iData }
 });
 
-class Wordcloud extends React.Component {
+class Wordcloud extends React.PureComponent {
   render() {
     const {height=380}=this.props;
     function getTextAttrs(cfg) {
@@ -59,7 +58,7 @@ class Wordcloud extends React.Component {
         });
       }
     });
-    const dv = new DataSet.View().source(data, {
+    const dv = new DataSet.View().source(data1, {
       type: 'csv'
     });
     const range = dv.range("value");
@@ -103,7 +102,7 @@ class Wordcloud extends React.Component {
     };
 
     return (
-      <div id='wordcloud'>
+      // <div>
         <Chart
           height={height}
           data={dv}
@@ -123,7 +122,7 @@ class Wordcloud extends React.Component {
             tooltip="value*x"
           />
         </Chart>
-      </div>
+      // </div>
     );
   }
 }

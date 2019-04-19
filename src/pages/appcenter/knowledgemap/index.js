@@ -145,7 +145,7 @@ class Network extends Component {
       <div>
         <Breadcrumb separator=">" style={bread}>
           <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
-          <Breadcrumb.Item>热门个股</Breadcrumb.Item>
+          <Breadcrumb.Item>知识图谱</Breadcrumb.Item>
         </Breadcrumb>
         <div id="netWorkMountNode"  style={{ width: 1000, height: 600 }} />
       </div>

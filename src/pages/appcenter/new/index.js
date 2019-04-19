@@ -153,17 +153,33 @@ class AppCenter extends React.Component {
                   <span>5G</span>
                   <Icon type="info-circle" />
                 </div>
-                <div className={styles.cardContent}>
-                  <span className={styles.span1}>资讯量</span>
-                  <span className={styles.span2}>1234</span>
-                  <span className={styles.span3}>aaaa</span>
+                <div className={styles.cardContent2}>
+                  <div className={styles.cardContentNum}>
+                    <span className={styles.span1}>资讯量</span>
+                    <span className={styles.span2}>1234</span>
+                    <span className={styles.span3}>aaaa</span>
+                  </div>
+                  <div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                      />
+                    </Chart>
+                  </div>
                 </div>
               </div>
               }
             >
               <Statistic
                 className={styles.cardContentStatistic}
-                title="周关注度"
+                title="周热度"
                 value={12}
                 precision={0}
                 valueStyle={{ color: '#3f8600', fontSize: 14 }}
@@ -172,7 +188,7 @@ class AppCenter extends React.Component {
               />
               <Statistic
                 className={`${styles.cardContentStatistic}`}
-                title="日关注度"
+                title="日热度"
                 value={11}
                 precision={0}
                 valueStyle={{ color: '#cf1322', fontSize: 14 }}
@@ -189,17 +205,33 @@ class AppCenter extends React.Component {
                   <span>粤港澳大湾区</span>
                   <Icon type="info-circle" />
                 </div>
-                <div className={styles.cardContent}>
-                  <span className={styles.span1}>资讯量</span>
-                  <span className={styles.span2}>4321</span>
-                  <span className={styles.span3}>aaaa</span>
+                <div className={styles.cardContent2}>
+                  <div className={styles.cardContentNum}>
+                    <span className={styles.span1}>资讯量</span>
+                    <span className={styles.span2}>4321</span>
+                    <span className={styles.span3}>aaaa</span>
+                  </div>
+                  <div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                      />
+                    </Chart>
+                  </div>
                 </div>
               </div>
               }
             >
               <Statistic
                 className={styles.cardContentStatistic}
-                title="周关注度"
+                title="周热度"
                 value={12}
                 precision={0}
                 valueStyle={{ color: '#3f8600', fontSize: 14 }}
@@ -208,7 +240,7 @@ class AppCenter extends React.Component {
               />
               <Statistic
                 className={`${styles.cardContentStatistic}`}
-                title="日关注度"
+                title="日热度"
                 value={11}
                 precision={0}
                 valueStyle={{ color: '#cf1322', fontSize: 14 }}
@@ -225,20 +257,25 @@ class AppCenter extends React.Component {
                   <span>石墨烯</span>
                   <Icon type="info-circle" />
                 </div>
-                <div className={styles.cardContent}>
+                <div className={styles.cardContent2}>
+                  <div className={styles.cardContentNum}>
+                    <span className={styles.span1}>资讯量</span>
+                    <span className={styles.span2}>4321</span>
+                    <span className={styles.span3}>aaaa</span>
+                  </div>
                   <div className={styles.cardContentCharts}>
-                  <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
-                    <Tooltip
-                      crosshairs={{
-                        type: "line"
-                      }}
-                    />
-                    <Geom
-                      type="area"
-                      position="day*value"
-                      color="#8f66dd"
-                    />
-                  </Chart>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                      />
+                    </Chart>
                   </div>
                 </div>
               </div>
@@ -272,17 +309,33 @@ class AppCenter extends React.Component {
                   <span>国产航母</span>
                   <Icon type="info-circle" />
                 </div>
-                <div className={styles.cardContent}>
-                  <span className={styles.span1}>资讯量</span>
-                  <span className={styles.span2}>3520</span>
-                  <span className={styles.span3}>aaaa</span>
+                <div className={styles.cardContent2}>
+                  <div className={styles.cardContentNum}>
+                    <span className={styles.span1}>资讯量</span>
+                    <span className={styles.span2}>3520</span>
+                    <span className={styles.span3}>aaaa</span>
+                  </div>
+                  <div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                      />
+                    </Chart>
+                  </div>
                 </div>
               </div>
               }
             >
               <Statistic
                 className={styles.cardContentStatistic}
-                title="周关注度"
+                title="周热度"
                 value={12}
                 precision={0}
                 valueStyle={{ color: '#3f8600', fontSize: 14 }}
@@ -291,7 +344,7 @@ class AppCenter extends React.Component {
               />
               <Statistic
                 className={`${styles.cardContentStatistic}`}
-                title="日关注度"
+                title="日热度"
                 value={11}
                 precision={0}
                 valueStyle={{ color: '#cf1322', fontSize: 14 }}
