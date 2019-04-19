@@ -11,24 +11,24 @@ const moduleList = [
     icon: 'https://ws4.sinaimg.cn/large/006tNc79ly1g1wkozvgoxj305k05k3yj.jpg',
     title: '量化研究',
     desc: '提供基于nootbook的研究环境，可实现因子管理和因子检测，支持多品类策略的编写...',
-    link: 'appcenter/hot',
-    disabled: true,
+    link: '/',
+    disabled: false,
     id: 0,
   },
   {
     icon: 'https://ws4.sinaimg.cn/large/006tNc79ly1g1wkozvgoxj305k05k3yj.jpg',
     title: '智能投研',
     desc: '以企业画像为基础，利用大数据和AI实现快速智能标签选股，海量舆情信息快速筛选识别...',
-    link: 'appcenter/negative',
-    disabled: true,
+    link: '/',
+    disabled: false,
     id: 1,
   },
   {
     icon: 'https://ws4.sinaimg.cn/large/006tNc79ly1g1wkozvgoxj305k05k3yj.jpg',
     title: '机器学习',
     desc: 'APS机器学习平台，集数据准备、特征工程、算法实现、模型开发、模型发布...',
-    link: 'appcenter/new',
-    disabled: true,
+    link: '/',
+    disabled: false,
     id: 2,
   },
   {
@@ -36,8 +36,8 @@ const moduleList = [
     title: '投资交易',
     desc: '敬请期待...',
     // eslint-disable-next-line no-script-url
-    link: 'appcenter/heattrend',
-    disabled: true,
+    link: '/',
+    disabled: false,
     id: 3,
   },
   {
@@ -45,8 +45,8 @@ const moduleList = [
     title: '组合管理',
     desc: '敬请期待...',
     // eslint-disable-next-line no-script-url
-    link: 'appcenter/knowledgemap',
-    disabled: true,
+    link: '/',
+    disabled: false,
     id: 4,
   }
   ,
@@ -83,7 +83,6 @@ const modulesList = [
 function IndexPage() {
   return (
     <div className={styles.container}>
-      <h2>功能区</h2>
       <List
         grid={{ gutter: 24, xs: 3 }}
         dataSource={moduleList}
@@ -104,7 +103,6 @@ function IndexPage() {
           </List.Item>
         )}
       />
-      <h2>应用区</h2>
        <List
         grid={{ gutter: 24, xs: 3 }}
         dataSource={modulesList}

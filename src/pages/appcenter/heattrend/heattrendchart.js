@@ -143,6 +143,12 @@ function getComponent() {
               position="time*value"
               color="l(100) 0:#096dd9 1:#f5f5f5"
               opacity={0.85}
+               tooltip={['value', (value)=>{
+                return {
+                  name:'热度',
+                  value
+                }
+              }]}
             />
 
           </Chart>

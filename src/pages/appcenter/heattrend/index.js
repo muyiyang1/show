@@ -68,30 +68,21 @@ class HeatTrend extends React.Component {
           </div>
 
           <Row gutter={24}>
-           { checked2 ||  checked1 && (
             <Col span={12} style={{marginBottom:24}}>
               <Card title="个股综合热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
-           )}
-          { checked1 ||  checked3 && (
             <Col span={12} style={{marginBottom:24}}>
               <Card title="行业综合热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
-           )}
-          { checked1 ||  checked4 && (
             <Col span={12} style={{marginBottom:24}}>
               <Card title="概念综合热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
-          )}
              <Col span={12} style={{marginBottom:24}}>
               <Card title="个股舆论热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
-
-
              <Col span={12} style={{marginBottom:24}}>
               <Card title="行业舆论热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>
-
              <Col span={12} style={{marginBottom:24}}>
               <Card title="概念舆论热度趋势图" bordered={false}><HeatTrendChart/></Card>
             </Col>

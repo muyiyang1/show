@@ -143,6 +143,9 @@ class AppCenter extends React.Component {
 
     return (
       <div className='normal'>
+        <div style={{height:40,lineHeight:'40px'}}>
+          <Icon type="setting" style={{lineHeight:'40px',float:'right'}}/>
+        </div>
         <Card
           title={<span>热门个股<span onClick={this.hot} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
           bordered={false}
@@ -257,6 +260,114 @@ class AppCenter extends React.Component {
               />
             </Card>
             </Col>
+            <Col span={6}>
+            <Card
+              title={
+              <div className={styles.cardTitleWrap}>
+                <div className={styles.cardTitle}>
+                  <span>国产航母</span>
+                  <Icon type="info-circle" />
+                </div>
+                <div className={styles.cardContent}>
+                  <span className={styles.span1}>资讯量</span>
+                  <span className={styles.span2}>8678</span>
+                  <span className={styles.span3}>aaaa</span>
+                </div>
+              </div>
+              }
+            >
+              <Statistic
+                className={styles.cardContentStatistic}
+                title="周关注度"
+                value={19}
+                precision={0}
+                valueStyle={{ color: '#3f8600', fontSize: 14 }}
+                prefix={<Icon type="caret-up" />}
+                suffix="%"
+              />
+              <Statistic
+                className={`${styles.cardContentStatistic}`}
+                title="日关注度"
+                value={31}
+                precision={0}
+                valueStyle={{ color: '#cf1322', fontSize: 14 }}
+                prefix={<Icon type="caret-down" />}
+                suffix="%"
+              />
+            </Card>
+            </Col>
+            <Col span={6}>
+            <Card
+              title={
+              <div className={styles.cardTitleWrap}>
+                <div className={styles.cardTitle}>
+                  <span>粤港澳大湾区</span>
+                  <Icon type="info-circle" />
+                </div>
+                <div className={styles.cardContent}>
+                  <span className={styles.span1}>资讯量</span>
+                  <span className={styles.span2}>238</span>
+                  <span className={styles.span3}>aaaa</span>
+                </div>
+              </div>
+              }
+            >
+              <Statistic
+                className={styles.cardContentStatistic}
+                title="周关注度"
+                value={45}
+                precision={0}
+                valueStyle={{ color: '#3f8600', fontSize: 14 }}
+                prefix={<Icon type="caret-up" />}
+                suffix="%"
+              />
+              <Statistic
+                className={`${styles.cardContentStatistic}`}
+                title="日关注度"
+                value={18}
+                precision={0}
+                valueStyle={{ color: '#cf1322', fontSize: 14 }}
+                prefix={<Icon type="caret-down" />}
+                suffix="%"
+              />
+            </Card>
+            </Col>
+            <Col span={6}>
+            <Card
+              title={
+              <div className={styles.cardTitleWrap}>
+                <div className={styles.cardTitle}>
+                  <span>石墨烯</span>
+                  <Icon type="info-circle" />
+                </div>
+                <div className={styles.cardContent}>
+                  <span className={styles.span1}>资讯量</span>
+                  <span className={styles.span2}>23434</span>
+                  <span className={styles.span3}>aaaa</span>
+                </div>
+              </div>
+              }
+            >
+              <Statistic
+                className={styles.cardContentStatistic}
+                title="周关注度"
+                value={34}
+                precision={0}
+                valueStyle={{ color: '#3f8600', fontSize: 14 }}
+                prefix={<Icon type="caret-up" />}
+                suffix="%"
+              />
+              <Statistic
+                className={`${styles.cardContentStatistic}`}
+                title="日关注度"
+                value={21}
+                precision={0}
+                valueStyle={{ color: '#cf1322', fontSize: 14 }}
+                prefix={<Icon type="caret-down" />}
+                suffix="%"
+              />
+            </Card>
+            </Col>
             </Row>
         </Card>
          <Card
@@ -285,6 +396,65 @@ class AppCenter extends React.Component {
                       type="area"
                       position="day*value"
                       color="#8f66dd"
+                       tooltip={['value', (value)=>{
+                        return {
+                          name:'热度',
+                          value
+                        }
+                      }]}
+                    />
+                  </Chart>
+                  </div>
+                </div>
+              </div>
+              }
+            >
+              <Statistic
+                className={styles.cardContentStatistic}
+                title="周关注度"
+                value={70}
+                precision={0}
+                valueStyle={{ color: '#3f8600', fontSize: 14 }}
+                prefix={<Icon type="caret-up" />}
+                suffix="%"
+              />
+              <Statistic
+                className={`${styles.cardContentStatistic}`}
+                title="日关注度"
+                value={13}
+                precision={0}
+                valueStyle={{ color: '#cf1322', fontSize: 14 }}
+                prefix={<Icon type="caret-down" />}
+                suffix="%"
+              />
+            </Card>
+            </Col>
+            <Col span={6}>
+          <Card
+              title={
+              <div className={styles.cardTitleWrap}>
+                <div className={styles.cardTitle}>
+                  <span>工业大麻</span>
+                  <Icon type="info-circle" />
+                </div>
+                <div className={styles.cardContent}>
+                  <div className={styles.cardContentCharts}>
+                  <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                    <Tooltip
+                      crosshairs={{
+                        type: "line"
+                      }}
+                    />
+                    <Geom
+                      type="area"
+                      position="day*value"
+                      color="#8f66dd"
+                      tooltip={['value', (value)=>{
+                        return {
+                          name:'热度',
+                          value
+                        }
+                      }]}
                     />
                   </Chart>
                   </div>
@@ -305,6 +475,112 @@ class AppCenter extends React.Component {
                 className={`${styles.cardContentStatistic}`}
                 title="日关注度"
                 value={11}
+                precision={0}
+                valueStyle={{ color: '#cf1322', fontSize: 14 }}
+                prefix={<Icon type="caret-down" />}
+                suffix="%"
+              />
+            </Card>
+            </Col>
+            <Col span={6}>
+          <Card
+              title={
+              <div className={styles.cardTitleWrap}>
+                <div className={styles.cardTitle}>
+                  <span>5G</span>
+                  <Icon type="info-circle" />
+                </div>
+                <div className={styles.cardContent}>
+                  <div className={styles.cardContentCharts}>
+                  <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                    <Tooltip
+                      crosshairs={{
+                        type: "line"
+                      }}
+                    />
+                    <Geom
+                      type="area"
+                      position="day*value"
+                      color="#8f66dd"
+                       tooltip={['value', (value)=>{
+                        return {
+                          name:'热度',
+                          value
+                        }
+                      }]}
+                    />
+                  </Chart>
+                  </div>
+                </div>
+              </div>
+              }
+            >
+              <Statistic
+                className={styles.cardContentStatistic}
+                title="周关注度"
+                value={15}
+                precision={0}
+                valueStyle={{ color: '#3f8600', fontSize: 14 }}
+                prefix={<Icon type="caret-up" />}
+                suffix="%"
+              />
+              <Statistic
+                className={`${styles.cardContentStatistic}`}
+                title="日关注度"
+                value={11}
+                precision={0}
+                valueStyle={{ color: '#cf1322', fontSize: 14 }}
+                prefix={<Icon type="caret-down" />}
+                suffix="%"
+              />
+            </Card>
+            </Col>
+            <Col span={6}>
+          <Card
+              title={
+              <div className={styles.cardTitleWrap}>
+                <div className={styles.cardTitle}>
+                  <span>区块链</span>
+                  <Icon type="info-circle" />
+                </div>
+                <div className={styles.cardContent}>
+                  <div className={styles.cardContentCharts}>
+                  <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                    <Tooltip
+                      crosshairs={{
+                        type: "line"
+                      }}
+                    />
+                    <Geom
+                      type="area"
+                      position="day*value"
+                      color="#8f66dd"
+                       tooltip={['value', (value)=>{
+                        return {
+                          name:'热度',
+                          value
+                        }
+                      }]}
+                    />
+                  </Chart>
+                  </div>
+                </div>
+              </div>
+              }
+            >
+              <Statistic
+                className={styles.cardContentStatistic}
+                title="周关注度"
+                value={22}
+                precision={0}
+                valueStyle={{ color: '#3f8600', fontSize: 14 }}
+                prefix={<Icon type="caret-up" />}
+                suffix="%"
+              />
+              <Statistic
+                className={`${styles.cardContentStatistic}`}
+                title="日关注度"
+                value={10}
                 precision={0}
                 valueStyle={{ color: '#cf1322', fontSize: 14 }}
                 prefix={<Icon type="caret-down" />}

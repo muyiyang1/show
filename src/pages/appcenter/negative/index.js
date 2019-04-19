@@ -15,7 +15,7 @@ const bread = {
 
 const columns = [
   {
-    title: '事件',
+    title: '标题',
     dataIndex: 'title',
     render: (text) => {
       return (
