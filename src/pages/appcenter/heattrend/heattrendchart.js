@@ -11,19 +11,89 @@ import DataSet from "@antv/data-set";
 import Slider from "bizcharts-plugin-slider";
 
 let data;
-$.ajax({
-  url: "https://alifd.alibabausercontent.com/materials/@bizcharts/g2-area-large/0.3.0/build/mock.json",
-  async : false,
-  success: (iData) => { data = iData }
-});
 
-function getComponent(data) {
+
+function getComponent() {
   const ds = new DataSet({
     state: {
-      start: new Date("2009/9/20").getTime(),
-      end: new Date("2009/9/23").getTime()
+      start: new Date("9-12").getTime(),
+      end: new Date("9-30").getTime()
     }
   });
+  const data = [
+   {
+        time: "9-12",
+        value: 82
+      },
+      {
+        time: "9-13",
+        value: 86
+      },
+      {
+        time: "9-14",
+        value: 88
+      },
+      {
+        time: "9-15",
+        value: 87
+      },
+      {
+        year: "9-16",
+        value: 88
+      },
+      {
+        time: "9-17",
+        value: 90
+      },
+      {
+        time: "9-18",
+        value: 91
+      },
+      {
+        time: "9-19",
+        value: 90
+      },
+      {
+        time: "9-20",
+        value: 90
+      },
+      {
+        time: "9-21",
+        value: 91
+      },
+      {
+        time: "9-22",
+        value: 92
+      },
+      {
+        time: "9-23",
+        value: 93
+      },
+      {
+        time: "9-24",
+        value: 93
+      },
+      {
+        year: "9-25",
+        value: 95
+      },
+      {
+        time: "9-26",
+        value: 96
+      },
+      {
+        time: "9-27",
+        value: 96
+      },
+      {
+        time: "9-28",
+        value: 98
+      },
+      {
+        time: "9-29",
+        value: 100
+      }
+    ];
   const dv = ds.createView("origin").source(data);
   dv.transform({
     type: "filter",
@@ -38,9 +108,8 @@ function getComponent(data) {
       tickCount: 8,
       mask: "M/DD"
     },
-    flow: {
-      alias: "热度"
-    },
+
+
 
   };
   let chart;
@@ -66,12 +135,12 @@ function getComponent(data) {
             }}
             forceFit
           >
-            <Axis name="rain" grid={null} />
+            <Axis name="time" grid={null} />
             <Tooltip />
 
             <Geom
               type="area"
-              position="time*flow"
+              position="time*value"
               color="l(100) 0:#096dd9 1:#f5f5f5"
               opacity={0.85}
             />
@@ -85,7 +154,7 @@ function getComponent(data) {
               start={ds.state.start}
               end={ds.state.end}
               xAxis="time"
-              yAxis="flow"
+              yAxis="value"
               scales={{
                 time: {
                   type: "time",
