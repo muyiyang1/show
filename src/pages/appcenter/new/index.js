@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Breadcrumb, Card, Statistic, Icon, Input } from "antd";
+import Link from "umi/link";
 import {
   G2,
   Chart,
@@ -132,7 +133,7 @@ class AppCenter extends React.Component {
       <div className='normal'>
       <div className={styles.headerTitle}>
         <Breadcrumb separator=">" style={bread}>
-          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
+          <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
           <Breadcrumb.Item>新兴概念</Breadcrumb.Item>
         </Breadcrumb>
         <div>

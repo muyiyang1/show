@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import G6 from '@antv/g6';
-import { forceSimulation, forceManyBody, forceLink, forceCenter } from 'd3';
-import $ from 'jquery';
+import React, { Component } from '@/pages/appcenter/knowledgemap/node_modules/react';
+import G6 from '@/pages/appcenter/knowledgemap/node_modules/@antv/g6';
+import { forceSimulation, forceManyBody, forceLink, forceCenter } from '@/pages/appcenter/knowledgemap/node_modules/d3';
+import $ from '@/pages/appcenter/knowledgemap/node_modules/jquery';
 import data from '@/assets/xiaomi.json';
+import Link from "@/pages/appcenter/knowledgemap/node_modules/umi/link";
 // import './index.css';
 
 // console.log(data);

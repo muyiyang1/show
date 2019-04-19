@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import { Row, Col, Table, Breadcrumb, Timeline, Tag, Tabs } from "antd";
 import styles from './index.less';
+import Link from "umi/link";
 
 const TabPane = Tabs.TabPane;
 
@@ -120,7 +121,7 @@ class AppCenter extends React.Component {
     return (
       <div className='normal'>
         <Breadcrumb separator=">" style={bread}>
-          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
+          <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
           <Breadcrumb.Item>负面舆情</Breadcrumb.Item>
         </Breadcrumb>
         <div className='tablebg'>

@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from '@/pages/appcenter/knowledgemap/node_modules/react';
 import echarts from 'echarts';
 // import { forceSimulation, forceManyBody, forceLink, forceCenter } from 'd3';
-import $ from 'jquery';
+import Link from "@/pages/appcenter/knowledgemap/node_modules/umi/link";
+import $ from '@/pages/appcenter/knowledgemap/node_modules/jquery';
 import data from '@/assets/network.json';
-import uuid from 'uuid';
-import { Breadcrumb } from "antd";
+import uuid from '@/pages/appcenter/knowledgemap/node_modules/uuid';
+import { Breadcrumb } from "@/pages/appcenter/knowledgemap/node_modules/antd";
 
 const bread={
   height:'40px',
@@ -133,7 +134,7 @@ class Network extends Component {
     return(
       <div>
         <Breadcrumb separator=">" style={bread}>
-          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
+          <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
           <Breadcrumb.Item>热门个股</Breadcrumb.Item>
         </Breadcrumb>
         <div id="netWorkMountNode"  style={{ width: 1000, height: 600 }} />
