@@ -103,12 +103,12 @@ class Wordcloud extends React.Component {
     return (
       <div>
         <Chart
-          height={window.innerHeight}
-          width={window.innerWidth}
+          height={380}
           data={dv}
           scale={scale}
           padding={0}
           forceFit
+          auto
         >
           <Tooltip showTitle={false} />
           <Coord reflect="y" />

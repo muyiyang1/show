@@ -1,0 +1,55 @@
+import React from 'react';
+import { Tag, Breadcrumb, Col,Row,Card} from "antd";
+import HeatTrendChart from './heattrendchart';
+
+const bread = {
+  height: '40px',
+  lineHeight: '40px',
+  fontSize: '16px',
+  marginBottom: '12px'
+}
+const { CheckableTag } = Tag;
+class HeatTrend extends React.Component {
+  render() {
+    return (
+      <div className='normal'>
+        <Breadcrumb separator=">" style={bread}>
+          <Breadcrumb.Item href="/appcenter">场景中心</Breadcrumb.Item>
+          <Breadcrumb.Item>热度趋势</Breadcrumb.Item>
+        </Breadcrumb>
+        <div className='tablebg'>
+          <div style={{marginTop:12,marginBottom:12}}>
+            <CheckableTag checked>全部</CheckableTag>
+            <CheckableTag checked>综合</CheckableTag>
+            <CheckableTag checked>个股</CheckableTag>
+            <CheckableTag checked>行业</CheckableTag>
+            <CheckableTag checked>概念</CheckableTag>
+          </div>
+
+          <Row gutter={24}>
+            <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+            <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+            <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+             <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+             <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+             <Col span={12} style={{marginBottom:24}}>
+              <Card title="Card title" bordered={false}><HeatTrendChart/></Card>
+            </Col>
+          </Row>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default HeatTrend;
