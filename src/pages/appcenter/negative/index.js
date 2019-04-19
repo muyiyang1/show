@@ -126,24 +126,7 @@ class AppCenter extends React.Component {
         </Breadcrumb>
         <div className='tablebg'>
           <Tabs defaultActiveKey="1">
-            <TabPane tab="列表" key="1">
-              <Col span={24}>
-                <div className={styles.platform}>
-                  <div className={styles.headerTitle}>
-                    <span className={styles.title}>负面舆情</span>
-                  </div>
-                  <div className={styles.contenttable}>
-                    <Table
-                      size='middle'
-                      columns={columns}
-                      dataSource={dataSource}
-                      pagination={false}
-                    />
-                  </div>
-                </div>
-              </Col>
-            </TabPane>
-            <TabPane tab="时间轴" key="2">
+            <TabPane tab="时间线" key="1">
               <Timeline>
                 <Timeline.Item color='#58bfc0'>
                   <p style={{ fontSize: '16px' }}>
@@ -176,6 +159,23 @@ class AppCenter extends React.Component {
                   <a>全文</a>
                 </Timeline.Item>
               </Timeline>
+            </TabPane>
+            <TabPane tab="列表" key="2">
+              <Col span={24}>
+                <div className={styles.platform}>
+                  <div className={styles.headerTitle}>
+                    <span className={styles.title}>负面舆情</span>
+                  </div>
+                  <div className={styles.contenttable}>
+                    <Table
+                      size='middle'
+                      columns={columns}
+                      dataSource={dataSource}
+                      pagination={false}
+                    />
+                  </div>
+                </div>
+              </Col>
             </TabPane>
           </Tabs>
 
