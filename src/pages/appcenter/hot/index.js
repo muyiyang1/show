@@ -1,6 +1,20 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Row,Col,Table,Icon,Breadcrumb } from "antd";
+import { Row,Col,Table,Icon,Breadcrumb,Tooltip } from "antd";
+import {
+  G2,
+  Chart,
+  Geom,
+  Axis,
+  Coord,
+  Label,
+  Legend,
+  View,
+  Guide,
+  Shape,
+  Facet,
+  Util
+} from "bizcharts"
 import styles from './index.less';
 
 const bread={
@@ -9,13 +23,110 @@ const bread={
   fontSize:'16px',
   marginBottom:'12px'
 }
+ const data = [
+   {
+        day: "9-12",
+        value: 82
+      },
+      {
+        day: "9-13",
+        value: 86
+      },
+      {
+        day: "9-14",
+        value: 88
+      },
+      {
+        day: "9-15",
+        value: 87
+      },
+      {
+        year: "9-16",
+        value: 88
+      },
+      {
+        day: "9-17",
+        value: 90
+      },
+      {
+        day: "9-18",
+        value: 91
+      },
+      {
+        day: "9-19",
+        value: 90
+      },
+      {
+        day: "9-20",
+        value: 90
+      },
+      {
+        day: "9-21",
+        value: 91
+      },
+      {
+        day: "9-22",
+        value: 92
+      },
+      {
+        day: "9-23",
+        value: 93
+      },
+      {
+        day: "9-24",
+        value: 93
+      },
+      {
+        year: "9-25",
+        value: 95
+      },
+      {
+        day: "9-26",
+        value: 96
+      },
+      {
+        day: "9-27",
+        value: 96
+      },
+      {
+        day: "9-28",
+        value: 98
+      },
+      {
+        day: "9-29",
+        value: 100
+      }
+    ];
+const cols = {
+  value: {
+    max: 100
+  },
 
+};
 @connect()
 class AppCenter extends React.Component {
+  chart=()=>{
+    return(
+      <div style={{width:200,height:100}}>
+        <Chart height={100} width={200} data={data} scale={cols} forceFit padding={[0]}>
+          <Tooltip
+            crosshairs={{
+              type: "line"
+            }}
+          />
+          <Geom type="area" position="day*value" />
+          <Geom type="line" position="day*value" size={2}/>
+        </Chart>
+      </div>
+      )
+  }
   render() {
     const hotlistcolumns = [{
       title: '个股',
       dataIndex: 'stocksName',
+      render:(text)=>(
+        <a href='javascript:;'> <Tooltip placement="right" title={this.chart}>{text}</Tooltip></a>
+      )
     }, {
       title: '热度',
       dataIndex: 'heat',

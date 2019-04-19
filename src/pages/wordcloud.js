@@ -30,6 +30,7 @@ $.ajax({
 
 class Wordcloud extends React.Component {
   render() {
+    const {height=380}=this.props;
     function getTextAttrs(cfg) {
       return _.assign(
         {},
@@ -67,7 +68,7 @@ class Wordcloud extends React.Component {
     dv.transform({
       type: "tag-cloud",
       fields: ["x", "value"],
-      size: [window.innerWidth, window.innerHeight],
+      size: [window.innerWidth, height],
       font: "Verdana",
       padding: 0,
       timeInterval: 5000,
@@ -100,10 +101,11 @@ class Wordcloud extends React.Component {
         nice: false
       }
     };
+
     return (
       <div>
         <Chart
-          height={380}
+          height={height}
           data={dv}
           scale={scale}
           padding={0}
