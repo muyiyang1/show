@@ -1,11 +1,11 @@
-import React, { Component } from '@/pages/appcenter/knowledgemap/node_modules/react';
+import React, { Component } from 'react';
 import echarts from 'echarts';
 // import { forceSimulation, forceManyBody, forceLink, forceCenter } from 'd3';
-import Link from "@/pages/appcenter/knowledgemap/node_modules/umi/link";
-import $ from '@/pages/appcenter/knowledgemap/node_modules/jquery';
+import Link from "umi/link";
+import $ from 'jquery';
 import data from '@/assets/network.json';
-import uuid from '@/pages/appcenter/knowledgemap/node_modules/uuid';
-import { Breadcrumb } from "@/pages/appcenter/knowledgemap/node_modules/antd";
+import uuid from 'uuid';
+import { Breadcrumb } from "antd";
 
 const bread={
   height:'40px',
