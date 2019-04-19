@@ -9,3 +9,60 @@
     font-weight: 900;
   }
 }
+.newStatistic{
+  margin-top: 16px;
+  .cardContentStatistic{
+    display: flex;
+    line-height: 25px;
+    height: 25px;
+  }
+  :global{
+    .ant-card-body{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+.ml10{
+  margin-left: 10px;
+}
+.cardTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitleWrap{
+  display: flex;
+  flex-direction: column;
+  .titleStatistic{
+    :global{
+      .ant-statistic-title{
+        opacity: 0.5;
+      }
+    }
+  }
+  .cardContent{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    .cardContentCharts{
+      width: 100%;
+      height: 60px;
+    }
+    .span1{
+      font-size: 14px;
+      opacity: 0.6;
+    }
+    .span2{
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .span3{
+      visibility: hidden;
+    }
+  }
+}

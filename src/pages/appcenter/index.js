@@ -1,11 +1,105 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Col,Row,Card,Icon} from "antd";
+import { Col,Row,Card,Icon,Statistic} from "antd";
 import router from 'umi/router';
+import {
+  G2,
+  Chart,
+  Geom,
+  Axis,
+  Coord,
+  Label,
+  Legend,
+  View,
+  Guide,
+  Shape,
+  Facet,
+  Util,
+  Tooltip
+} from "bizcharts"
 import WordcloudChart from "../wordcloud";
 import styles from './index.less'
 
+const data = [
+  {
+       day: "9-12",
+       value: 82
+     },
+     {
+       day: "9-13",
+       value: 86
+     },
+     {
+       day: "9-14",
+       value: 88
+     },
+     {
+       day: "9-15",
+       value: 87
+     },
+     {
+       year: "9-16",
+       value: 88
+     },
+     {
+       day: "9-17",
+       value: 90
+     },
+     {
+       day: "9-18",
+       value: 91
+     },
+     {
+       day: "9-19",
+       value: 90
+     },
+     {
+       day: "9-20",
+       value: 90
+     },
+     {
+       day: "9-21",
+       value: 91
+     },
+     {
+       day: "9-22",
+       value: 92
+     },
+     {
+       day: "9-23",
+       value: 93
+     },
+     {
+       day: "9-24",
+       value: 93
+     },
+     {
+       year: "9-25",
+       value: 95
+     },
+     {
+       day: "9-26",
+       value: 96
+     },
+     {
+       day: "9-27",
+       value: 96
+     },
+     {
+       day: "9-28",
+       value: 98
+     },
+     {
+       day: "9-29",
+       value: 100
+     }
+   ];
+const cols = {
+ value: {
+   max: 100
+ },
 
+};
 
 @connect()
 class AppCenter extends React.Component {
@@ -126,12 +220,99 @@ class AppCenter extends React.Component {
           bordered={false}
           style={{marginBottom:24}}
         >
+          <Row gutter={48} className={styles.newStatistic}>
+            <Col span={6}>
+            <Card
+              title={
+              <div className={styles.cardTitleWrap}>
+                <div className={styles.cardTitle}>
+                  <span>5G</span>
+                  <Icon type="info-circle" />
+                </div>
+                <div className={styles.cardContent}>
+                  <span className={styles.span1}>资讯量</span>
+                  <span className={styles.span2}>1234</span>
+                  <span className={styles.span3}>aaaa</span>
+                </div>
+              </div>
+              }
+            >
+              <Statistic
+                className={styles.cardContentStatistic}
+                title="周关注度"
+                value={12}
+                precision={0}
+                valueStyle={{ color: '#3f8600', fontSize: 14 }}
+                prefix={<Icon type="caret-up" />}
+                suffix="%"
+              />
+              <Statistic
+                className={`${styles.cardContentStatistic}`}
+                title="日关注度"
+                value={11}
+                precision={0}
+                valueStyle={{ color: '#cf1322', fontSize: 14 }}
+                prefix={<Icon type="caret-down" />}
+                suffix="%"
+              />
+            </Card>
+            </Col>
+            </Row>
         </Card>
          <Card
          title={<span>热度趋势<span onClick={this.heattrend} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
           bordered={false}
           style={{marginBottom:24}}
         >
+         <Row gutter={48} className={styles.newStatistic}>
+            <Col span={6}>
+          <Card
+              title={
+              <div className={styles.cardTitleWrap}>
+                <div className={styles.cardTitle}>
+                  <span>石墨烯</span>
+                  <Icon type="info-circle" />
+                </div>
+                <div className={styles.cardContent}>
+                  <div className={styles.cardContentCharts}>
+                  <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                    <Tooltip
+                      crosshairs={{
+                        type: "line"
+                      }}
+                    />
+                    <Geom
+                      type="area"
+                      position="day*value"
+                      color="#8f66dd"
+                    />
+                  </Chart>
+                  </div>
+                </div>
+              </div>
+              }
+            >
+              <Statistic
+                className={styles.cardContentStatistic}
+                title="周关注度"
+                value={12}
+                precision={0}
+                valueStyle={{ color: '#3f8600', fontSize: 14 }}
+                prefix={<Icon type="caret-up" />}
+                suffix="%"
+              />
+              <Statistic
+                className={`${styles.cardContentStatistic}`}
+                title="日关注度"
+                value={11}
+                precision={0}
+                valueStyle={{ color: '#cf1322', fontSize: 14 }}
+                prefix={<Icon type="caret-down" />}
+                suffix="%"
+              />
+            </Card>
+            </Col>
+            </Row>
         </Card>
          <Card
          title={<span>知识图谱<span onClick={this.knowledgemap} style={{float:'right',fontWeight:100,cursor:'pointer',fontSize:14}}>详细内容</span></span>}
