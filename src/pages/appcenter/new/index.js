@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Breadcrumb, } from "antd";
+import { Row, Col, Breadcrumb, Card, Statistic, Icon } from "antd";
 
 const bread = {
   height: '40px',
@@ -18,7 +18,19 @@ class AppCenter extends React.Component {
         </Breadcrumb>
         <Row gutter={24}>
           <Col span={6}>
-            ee
+            <Card
+              title="5G"
+            >
+              周关注度
+              <Statistic
+                title="Active"
+                value={11.28}
+                precision={2}
+                valueStyle={{ color: '#3f8600' }}
+                prefix={<Icon type="arrow-up" />}
+                suffix="%"
+              />
+            </Card>
           </Col>
           <Col span={6}>
             ee
