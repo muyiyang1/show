@@ -6,8 +6,8 @@ export default {
   history: 'hash',
   theme:'./src/thems.js',
   outputPath: './docs',
-  base: '/show',
-  publicPath: "/show/",
+  // base: '/show',
+  // publicPath: "/show/",
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
