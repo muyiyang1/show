@@ -26,6 +26,7 @@ class Network extends Component {
       nodes: [],
       links: [],
     };
+    const eventList = new Set();
     for(const parentNode of data.nodes) {
       categories.push({
         name: parentNode.name,
@@ -43,16 +44,24 @@ class Network extends Component {
         draggable: true,
       });
       for (const subNode of children) {
-        if (subNode.id === '1' && node.id === '8') {
+        // if (subNode.id === '1' && node.id === '8') {
+        //   chartData.links.push({
+        //     id: uuid.v4(),
+        //     source: '1sub4',
+        //     target: node.id,
+        //   });
+        // } else {
+        if (eventList.has(subNode.desc)) {
           chartData.links.push({
             id: uuid.v4(),
-            source: '1sub4',
+            source: subNode.desc,
             target: node.id,
           });
         } else {
           chartData.nodes.push({
             ...subNode,
-            id: node.id + 'sub' + subNode.id,
+            // id: node.id + 'sub' + subNode.id,
+            id: subNode.desc,
             name: subNode.desc,
             itemStyle: null,
             symbolSize: 10,
@@ -64,9 +73,10 @@ class Network extends Component {
             draggable: true,
             subNode: true,
           });
+
           chartData.links.push({
             id: uuid.v4(),
-            source: node.id + 'sub' + subNode.id,
+            source: subNode.desc,
             target: node.id,
           });
         }
