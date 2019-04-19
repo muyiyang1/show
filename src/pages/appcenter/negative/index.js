@@ -16,10 +16,20 @@ const columns = [
   {
     title: '事件',
     dataIndex: 'title',
+    render: (text) => {
+      return (
+        <a >{text}</a>
+      )
+    },
   },
   {
     title: '波及股票',
     dataIndex: 'stock',
+    render: (text) => {
+      return (
+        <a >{text}</a>
+      )
+    },
   },
   {
     title: '时间',
@@ -142,8 +152,9 @@ class AppCenter extends React.Component {
                   <p>在北太平洋</p>
                   <p>沉船漏油</p>
                   <p>污染地球</p>
+                  <a>全文</a>
                 </Timeline.Item>
-                <Timeline.Item>
+                <Timeline.Item color='#58bfc0'>
                   <p style={{ fontSize: '16px' }}>
                     <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
                   </p>
@@ -151,8 +162,9 @@ class AppCenter extends React.Component {
                   <p>在南极洲附近海域</p>
                   <p>沉船漏油</p>
                   <p>影响企鹅栖息地环境</p>
+                  <a>全文</a>
                 </Timeline.Item>
-                <Timeline.Item>
+                <Timeline.Item color='#58bfc0'>
                   <p style={{ fontSize: '16px' }}>
                     <span style={{ marginRight: '20px' }}>2019-04-16 21:34:12</span><Tag color='orange'>中国石化</Tag>
                   </p>
@@ -160,6 +172,7 @@ class AppCenter extends React.Component {
                   <p>在日本近海海域</p>
                   <p>沉船漏油</p>
                   <p>造成恶劣影响</p>
+                  <a>全文</a>
                 </Timeline.Item>
               </Timeline>
             </TabPane>
