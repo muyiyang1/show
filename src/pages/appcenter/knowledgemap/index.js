@@ -5,7 +5,7 @@ import Link from "umi/link";
 import $ from 'jquery';
 import data from '@/assets/network.json';
 import uuid from 'uuid';
-import { Breadcrumb } from "antd";
+import { Breadcrumb, Button, Radio } from "antd";
 
 const bread={
   height:'40px',
@@ -14,10 +14,33 @@ const bread={
   marginBottom:'12px'
 }
 class Network extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: 'company',
+    }
+    this.myChart = null;
+  }
+
   componentDidMount() {
-    const myChart = echarts.init(document.getElementById('netWorkMountNode'));
-    myChart.showLoading();
-    myChart.hideLoading();
+    this.myChart = echarts.init(document.getElementById('netWorkMountNode'));
+    this.processData();
+
+  }
+
+  change = (e) => {
+    this.setState({
+      type: e.target.value,
+    }, () => {
+      this.processData();
+    });
+  }
+
+  processData = () => {
+    const { type } = this.state;
+    this.myChart.showLoading();
+
+
 
     // var graph = echarts.dataTool.gexf.parse(xml);
     // console.log(graph);
@@ -35,8 +58,8 @@ class Network extends Component {
       chartData.nodes.push({
         ...node,
         itemStyle: null,
-        symbolSize: 40 * node.score,
-        value: 40 * node.score,
+        symbolSize: type === 'company' ? 40 * node.score : 10,
+        value: type === 'company' ? 40 * node.score : 10,
         category: node.name,
         // Use random x, y
         x: null,
@@ -51,21 +74,17 @@ class Network extends Component {
         //     target: node.id,
         //   });
         // } else {
-        if (eventList.has(subNode.desc)) {
-          chartData.links.push({
-            id: uuid.v4(),
-            source: subNode.desc,
-            target: node.id,
-          });
-        } else {
+        if (!eventList.has(subNode.desc)) {
+
+        // } else {
           chartData.nodes.push({
             ...subNode,
             // id: node.id + 'sub' + subNode.id,
             id: subNode.desc,
             name: subNode.desc,
             itemStyle: null,
-            symbolSize: 10,
-            value: 10,
+            symbolSize: type !== 'company' ? 30 : 10,
+            value: type !== 'company' ? 20 : 10,
             category: node.name,
             // Use random x, y
             x: null,
@@ -74,18 +93,24 @@ class Network extends Component {
             subNode: true,
           });
 
-          chartData.links.push({
-            id: uuid.v4(),
-            source: subNode.desc,
-            target: node.id,
-          });
+          eventList.add(subNode.desc);
+          // chartData.links.push({
+          //   id: uuid.v4(),
+          //   source: subNode.desc,
+          //   target: node.id,
+          // });
         }
+        chartData.links.push({
+          id: uuid.v4(),
+          source: subNode.desc,
+          target: node.id,
+        });
 
 
       }
     }
 
-    console.log(chartData, categories);
+    // console.log(chartData, categories);
 
     // graph.nodes.forEach(function(node) {
 
@@ -107,14 +132,14 @@ class Network extends Component {
 
         }
       },
-      legend: [
-        {
-          // selectedMode: 'single',
-          data: categories.map(function(a) {
-            return a.name;
-          }),
-        },
-      ],
+      // legend: [
+      //   {
+      //     // selectedMode: 'single',
+      //     data: categories.map(function(a) {
+      //       return a.name;
+      //     }),
+      //   },
+      // ],
       animation: true,
       series: [
         {
@@ -125,10 +150,21 @@ class Network extends Component {
           links: chartData.links,
           categories: categories,
           roam: true,
+          // focusNodeAdjacency: false,
           label: {
-            normal: {
-              position: 'right',
-            },
+            position: 'right',
+            show: true,
+            formatter: (params) => {
+              if (params.data.subNode) {
+                return '';
+              } else {
+                return `公司名称：${params.data.name} 买入概率：${params.data.score}`;
+              }
+
+            }
+            // normal: {
+
+            // },
           },
           force: {
             repulsion: 100,
@@ -137,7 +173,8 @@ class Network extends Component {
       ],
     };
 
-    myChart.setOption(option);
+    this.myChart.setOption(option);
+    this.myChart.hideLoading();
   }
 
   render() {
@@ -147,7 +184,13 @@ class Network extends Component {
           <Breadcrumb.Item ><Link to='/appcenter'>场景中心</Link></Breadcrumb.Item>
           <Breadcrumb.Item>知识图谱</Breadcrumb.Item>
         </Breadcrumb>
-        <div id="netWorkMountNode"  style={{ width: 1000, height: 600 }} />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Radio.Group defaultValue="company" buttonStyle="solid" onChange={this.change}>
+            <Radio.Button value="company">公司</Radio.Button>
+            <Radio.Button value="event">事件</Radio.Button>
+          </Radio.Group>
+        </div>
+        <div id="netWorkMountNode"  style={{ width: '100%', height: 600 }} />
       </div>
     )
   }
