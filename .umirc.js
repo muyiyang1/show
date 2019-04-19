@@ -4,7 +4,8 @@ export default {
   treeShaking: true,
   theme:'./src/thems.js',
   outputPath: './docs',
-  base: '/show',
+  base: '/show/',
+  publicPath: "/show/",
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
