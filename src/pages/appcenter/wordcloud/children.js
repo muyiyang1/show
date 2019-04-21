@@ -85,8 +85,14 @@ class Wordcloud extends React.PureComponent {
 
       fontSize(d) {
         if (d.value) {
+          // console.log(max, min, d.value)
           const divisor = (max - min) !== 0 ? (max - min) : 1;
-          return ((d.value - min) / divisor) * (80 - 24) / 120;
+          let result = ((d.value - min) / divisor) * (80 - 24) /2 ;
+          if (result<20) return 20;
+          // console.log(result);
+          // if (result > 1) return result / 2;
+          if(result > 80) return 80;
+          return result;
         }
 
         return 0;

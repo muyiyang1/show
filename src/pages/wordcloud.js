@@ -85,9 +85,21 @@ class Wordcloud extends React.Component {
       },
 
       fontSize(d) {
+        // if (d.value) {
+        //   const divisor = (max - min) !== 0 ? (max - min) : 1;
+        //   return ((d.value - min) / divisor) * (80 - 24) / 120;
+        // }
+
+        // return 0;
         if (d.value) {
+          // console.log(max, min, d.value)
           const divisor = (max - min) !== 0 ? (max - min) : 1;
-          return ((d.value - min) / divisor) * (80 - 24) / 120;
+          let result = ((d.value - min) / divisor) * (80 - 24) / 20 ;
+          if (result<10) return 10;
+          // console.log(result);
+          // if (result > 1) return result / 2;
+          if(result > 40) return 40;
+          return result;
         }
 
         return 0;

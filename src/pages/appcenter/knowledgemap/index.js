@@ -150,7 +150,7 @@ class Network extends Component {
           links: chartData.links,
           categories: categories,
           roam: true,
-          // focusNodeAdjacency: false,
+          focusNodeAdjacency: true,
           label: {
             position: 'right',
             show: true,
