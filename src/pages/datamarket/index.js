@@ -7,7 +7,7 @@ const moduleList = [
   {
     icon: 'https://ws4.sinaimg.cn/large/006tNc79ly1g1wkozvgoxj305k05k3yj.jpg',
     title: '指数数据',
-    desc: '沪深市场指数600+介',
+    desc: '沪深市场指数600+',
     id: 0,
   },
   {
@@ -55,7 +55,7 @@ class DataMarket extends React.Component {
               >
                 <Meta
                   avatar={<Avatar src={item.icon} />}
-                  title={<div>{item.title}<Icon type="exclamation-circle"  style={{float:'right'}}/></div>}
+                  title={<div>{item.title} <Icon type="info-circle" style={{float:'right'}}/></div>}
                   description={<div>{item.desc}</div>}
                 />
               </Card>

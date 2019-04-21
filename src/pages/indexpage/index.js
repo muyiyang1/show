@@ -55,8 +55,8 @@ const moduleList = [
     title: '实时风控',
     desc: '敬请期待...',
     // eslint-disable-next-line no-script-url
-    link: 'appcenter/wordcloud',
-    disabled: true,
+    link: '/',
+    disabled: false,
     id: 5,
   }
   ,
@@ -105,7 +105,9 @@ function IndexPage() {
       />
        <List
         grid={{ gutter: 24, xs: 3 }}
+        style={{marginTop:'24px'}}
         dataSource={modulesList}
+        className={styles.centerapp}
         renderItem={item => (
           <List.Item key={item.id} className={item.disabled ? styles.disabled : styles.abled}>
             <Card

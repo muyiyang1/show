@@ -159,7 +159,26 @@ class AppCenter extends React.Component {
                     <span className={styles.span2}>1234</span>
                     <span className={styles.span3}>aaaa</span>
                   </div>
-
+<div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                        tooltip={['value', (value)=>{
+                          return {
+                            name:'热度',
+                            value
+                          }
+                        }]}
+                      />
+                    </Chart>
+                  </div>
                 </div>
               </div>
               }
@@ -198,7 +217,26 @@ class AppCenter extends React.Component {
                     <span className={styles.span2}>4321</span>
                     <span className={styles.span3}>aaaa</span>
                   </div>
-
+<div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                        tooltip={['value', (value)=>{
+                          return {
+                            name:'热度',
+                            value
+                          }
+                        }]}
+                      />
+                    </Chart>
+                  </div>
                 </div>
               </div>
               }
@@ -237,7 +275,26 @@ class AppCenter extends React.Component {
                     <span className={styles.span2}>4321</span>
                     <span className={styles.span3}>aaaa</span>
                   </div>
-
+<div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                        tooltip={['value', (value)=>{
+                          return {
+                            name:'热度',
+                            value
+                          }
+                        }]}
+                      />
+                    </Chart>
+                  </div>
                 </div>
               </div>
               }
@@ -276,7 +333,26 @@ class AppCenter extends React.Component {
                     <span className={styles.span2}>3520</span>
                     <span className={styles.span3}>aaaa</span>
                   </div>
-
+                  <div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                        tooltip={['value', (value)=>{
+                          return {
+                            name:'热度',
+                            value
+                          }
+                        }]}
+                      />
+                    </Chart>
+                  </div>
                 </div>
               </div>
               }
