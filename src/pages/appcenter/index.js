@@ -140,7 +140,14 @@ class AppCenter extends React.Component {
 
        ]
       }
+ const attentiondata = {
+       "rows":[
+          {"id":1,"stocksName":"银鸽投资","heat":100,"heattrend":0},
+          {"id":2,"stocksName":"平安银行","heat":99,"heattrend":0},
+          {"id":3,"stocksName":"中国宝安","heat":98,"heattrend":1},
 
+       ]
+      }
     return (
       <div className='normal'>
         <div style={{height:40,lineHeight:'40px'}}>
@@ -171,6 +178,21 @@ class AppCenter extends React.Component {
                 <div className={styles.card}>
                   <span>个股讨论热度排行</span>
                   {discussdata.rows.map(item=>{
+                    return (
+                      <div className={styles.list}>
+                        {item.stocksName}
+                         {item.heattrend ===0 ?
+                         <Icon type="arrow-up" style={{color:'red',lineHeight:'40px',float:'right'}}/>:
+                         <Icon type="arrow-down" style={{color:'green',lineHeight:'40px',float:'right'}}/>}
+                      </div>
+                    )
+                  })}
+                </div>
+            </Col>
+             <Col span={6}>
+                <div className={styles.card}>
+                  <span>个股关注热度排行</span>
+                  {attentiondata.rows.map(item=>{
                     return (
                       <div className={styles.list}>
                         {item.stocksName}
@@ -213,7 +235,7 @@ class AppCenter extends React.Component {
         <Row gutter={48}>
             <Col span={6}>
                 <div className={styles.card}>
-                  <span>负面舆情<Icon type="exclamation-circle"  style={{float:'right',lineHeight:'40px'}}/></span>
+                  <span>负面舆情<Icon type="info-circle"  style={{float:'right',lineHeight:'40px'}}/></span>
                   <div className={styles.list}>
                       <span style={{fontWeight:100}}>更新咨询条数</span>
                       <span style={{fontWeight:800,fontSize:'28px',float:'right'}}>78</span>
@@ -246,6 +268,26 @@ class AppCenter extends React.Component {
                   <span className={styles.span2}>1234</span>
                   <span className={styles.span3}>aaaa</span>
                 </div>
+                <div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                        tooltip={['value', (value)=>{
+                          return {
+                            name:'热度',
+                            value
+                          }
+                        }]}
+                      />
+                    </Chart>
+                  </div>
               </div>
               }
             >
@@ -282,6 +324,26 @@ class AppCenter extends React.Component {
                   <span className={styles.span2}>8678</span>
                   <span className={styles.span3}>aaaa</span>
                 </div>
+                <div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                        tooltip={['value', (value)=>{
+                          return {
+                            name:'热度',
+                            value
+                          }
+                        }]}
+                      />
+                    </Chart>
+                  </div>
               </div>
               }
             >
@@ -318,6 +380,26 @@ class AppCenter extends React.Component {
                   <span className={styles.span2}>238</span>
                   <span className={styles.span3}>aaaa</span>
                 </div>
+                <div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                        tooltip={['value', (value)=>{
+                          return {
+                            name:'热度',
+                            value
+                          }
+                        }]}
+                      />
+                    </Chart>
+                  </div>
               </div>
               }
             >
@@ -354,6 +436,26 @@ class AppCenter extends React.Component {
                   <span className={styles.span2}>23434</span>
                   <span className={styles.span3}>aaaa</span>
                 </div>
+                <div className={styles.cardContentCharts}>
+                    <Chart height={60} data={data} scale={cols} forceFit padding={[0]}>
+                      <Tooltip
+                        crosshairs={{
+                          type: "line"
+                        }}
+                      />
+                      <Geom
+                        type="area"
+                        position="day*value"
+                        color="#8f66dd"
+                        tooltip={['value', (value)=>{
+                          return {
+                            name:'热度',
+                            value
+                          }
+                        }]}
+                      />
+                    </Chart>
+                  </div>
               </div>
               }
             >
@@ -607,7 +709,7 @@ class AppCenter extends React.Component {
           <Row gutter={48}>
             <Col span={6}>
                 <div className={styles.card}>
-                  <span>知识图谱<Icon type="exclamation-circle"  style={{float:'right',lineHeight:'40px'}}/></span>
+                  <span>知识图谱<Icon type="info-circle"  style={{float:'right',lineHeight:'40px'}}/></span>
                   <div className={styles.list}>
                       <span style={{fontWeight:100}}>公司</span>
                       <span style={{fontWeight:800,fontSize:'28px',float:'right'}}>18</span>
